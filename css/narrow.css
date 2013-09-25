@@ -1,0 +1,91 @@
+/*
+ * narrow.css
+ * 
+ * Copyright 2013 Micheal Walls <michealpwalls@gmail.com>
+ * 
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version.
+ * 
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ * 
+ * You should have received a copy of the GNU General Public License
+ * along with this program; if not, write to the Free Software
+ * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
+ * MA 02110-1301, USA.
+ * 
+ * 
+ */
+body {
+	margin: 0.5%;
+	padding: 0px;
+	font-size: 18px;
+	background: #6996D3;
+	color: #000000
+}
+
+#contentContainer {
+	padding: 10px;
+	background: #4380D3;
+	border: #284C7E solid 2px;
+	border-radius: 12px;
+	text-align: left;
+}
+
+#navigationContainer, nav {
+	display: inline;
+	padding: 0px;
+}
+
+#navigationContainer {
+	text-align: center;
+	margin-left: 85px;
+}
+
+#headerContainer {
+	margin-top: 25px;
+	margin-bottom: 0px;
+}
+
+div.navigationLink, div.navigationLink:hover, div.navigationLinkActive {
+	margin-left: 90px;
+	margin-bottom: 5px;
+	display: block;
+	width: 75%;
+	border: 1px solid #284C7E;
+	border-radius: 5px;
+	background: #4380D3;
+}
+
+div.navigationLinkActive {
+	border: 0px;
+	cursor: default;
+}
+
+div.navigationLink:hover {
+	background: #6996D3;
+	cursor: pointer;
+}
+
+#logo {
+	position: absolute;
+	top: 10px;
+	left: 10px;
+	margin: 0px;
+	padding: 0px;
+}
+
+a.navigationLinkAnchor, a.navigationLinkAnchor:hover, a.navigationLinkAnchor:active {
+	color: #000000;
+	text-decoration: none;
+}
+
+#copyrightContainer {
+	text-align: center;
+	text-decoration: italic;
+	font-size: 10px;
+}

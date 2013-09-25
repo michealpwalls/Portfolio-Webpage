@@ -1,5 +1,5 @@
 /*
- * base.css
+ * wide.css
  * 
  * Copyright 2013 Micheal Walls <michealpwalls@gmail.com>
  * 
@@ -21,13 +21,15 @@
  * 
  */
 body {
-	font-size: 8px;
+	margin: 0.5%;
+	padding: 0px;
+	font-size: 16px;
 	background: #6996D3;
 	color: #000000
 }
 
 #contentContainer {
-	padding: 5%;
+	padding: 10px;
 	background: #4380D3;
 	border: #284C7E solid 2px;
 	border-radius: 12px;
@@ -40,13 +42,13 @@ body {
 }
 
 #navigationContainer {
-	margin-left: 60px;
-	margin-top: 100px;
+	margin-left: 85px;
+	margin-top: 25px;
 }
 
 #headerContainer {
-	margin: 1%;
-	margin-bottom: 3%;
+	margin-top: 25px;
+	margin-bottom: 30px;
 }
 
 div.navigationLink, div.navigationLink:hover, div.navigationLinkActive {
@@ -69,12 +71,10 @@ div.navigationLink:hover {
 }
 
 #logo {
-	top: 0px;
-	left: 0px;
-	float: left;
-	margin: 5px;
-	margin-top: 0px;
-	margin-right: 0px;
+	position: absolute;
+	top: 3px;
+	left: 10px;
+	margin: 0px;
 	padding: 0px;
 }
 
@@ -86,4 +86,5 @@ a.navigationLinkAnchor, a.navigationLinkAnchor:hover, a.navigationLinkAnchor:act
 #copyrightContainer {
 	text-align: center;
 	text-decoration: italic;
+	font-size: 10px;
 }
