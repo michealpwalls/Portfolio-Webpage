@@ -1,6 +1,6 @@
 <?php
 /*
- * page_header.php
+ * navigation.php
  * 
  * Copyright 2013 Micheal Walls <michealpwalls@gmail.com>
  * 
@@ -21,15 +21,14 @@
  *      
  *      
  */
- 
- //At this point, we have up to the <body> element. ?>
-		<header>
-			<div id="headerContainer">
-				
-				<!-- My Logo -->
-				<img id="logo" title="My Logo" alt="My Logo" src="img/logo.png">
+?>
 
-				<!-- Site Navigation -->
-				<?php require_once( "navigation.php" ); ?>
-			</div>
-		</header>
+	<nav>
+		<div id="navigationContainer">
+			<div class="navigationLink"><a class="navigationLinkAnchor" href="">Link 1</a></div>
+			<div class="navigationLink"><a class="navigationLinkAnchor" href="">Link 2</a></div>
+			<div class="navigationLink"><a class="navigationLinkAnchor" href="">Link 3</a></div>
+			<div class="navigationLink"><a class="navigationLinkAnchor" href="">Link 4</a></div>
+			<div class="navigationLink"><a class="navigationLinkAnchor" href="">Link 5</a></div>
+		</div>
+	</nav>

@@ -1,6 +1,6 @@
 <?php
 /*
- * page_header.php
+ * footer.php
  * 
  * Copyright 2013 Micheal Walls <michealpwalls@gmail.com>
  * 
@@ -21,15 +21,11 @@
  *      
  *      
  */
- 
- //At this point, we have up to the <body> element. ?>
-		<header>
-			<div id="headerContainer">
-				
-				<!-- My Logo -->
-				<img id="logo" title="My Logo" alt="My Logo" src="img/logo.png">
-
-				<!-- Site Navigation -->
-				<?php require_once( "navigation.php" ); ?>
+?>
+		<footer>
+			<div id="copyrightContainer">
+				<p>&copy; 2013 Micheal Walls. All Rights Reserved.</p>
 			</div>
-		</header>
+		</footer>
+	</body>
+</html>

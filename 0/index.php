@@ -28,6 +28,9 @@ require_once( "html_head.php" );
 
 require_once( "page_header.php" );
 
-//Show some content to the user
-
-?>
+//The page content begins here ?>
+		<article>
+			<div id="contentContainer">
+				This is a demonstration of Page Content.
+			</div>
+		</article>

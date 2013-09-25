@@ -1,6 +1,5 @@
-<?php
 /*
- * page_header.php
+ * regular.css
  * 
  * Copyright 2013 Micheal Walls <michealpwalls@gmail.com>
  * 
@@ -18,18 +17,15 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
  * MA 02110-1301, USA.
- *      
- *      
+ * 
+ * 
  */
- 
- //At this point, we have up to the <body> element. ?>
-		<header>
-			<div id="headerContainer">
-				
-				<!-- My Logo -->
-				<img id="logo" title="My Logo" alt="My Logo" src="img/logo.png">
+body {
+	font-size: 1.5em;
+}
 
-				<!-- Site Navigation -->
-				<?php require_once( "navigation.php" ); ?>
-			</div>
-		</header>
+#copyrightContainer {
+	text-align: center;
+	font-size: 1em;
+	text-decoration: italic;
+}

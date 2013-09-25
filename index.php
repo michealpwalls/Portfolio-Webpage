@@ -22,13 +22,13 @@
  *      
  */
 
-//Initialize our id, to use as the job id for our main page index.
+//Initialize an id, to use as the job control for the pages.
 if( isset($_GET['id']) ) {
-	//An ID has been passed in. I first make sure it is not an empty string
+	//An ID has been passed in. First I make sure it is not an empty string
 	$idIn = trim( $_GET['id'] );
 	//Next I make sure the id passed in by the user is not empty after running Trim on it
 	if( !empty( $idIn ) ) {
-		//Next I make sure the user submitted id is an integer
+		//Next I make sure the user submitted id is a *practical* integer
 		if( $idIn >= 0 && $idIn <= 9999 ) {
 			//The id was a valid Integer, so I store it for use as the job index later on
 			$id = (int) $idIn;
@@ -51,7 +51,7 @@ if( isset($_GET['page']) ) {
 	$pageIn = trim( $_GET['page'] );
 	//Next I make sure the id passed in by the user is not empty after running Trim on it
 	if( !empty( $pageIn ) ) {
-		//Next I make sure the user submitted page number is a valid integer
+		//Next I make sure the user submitted page number is a *practical* integer
 		if( $pageIn >= 1 && $pageIn <= 9999 ) {
 			//The page number was a valid Integer, so I store it for use later
 			$page = (int) $pageIn;
@@ -64,7 +64,7 @@ if( isset($_GET['page']) ) {
 	}
 	unset($pageIn);
 } else {
-	//An page number does not yet exist, so I initialize an one to 0 for the default content page.
+	//A page number does not yet exist, so I initialize one to 0 for the default content page.
 	$page = (int) 1;
 }
 
@@ -75,5 +75,4 @@ if( file_exists( $id . "/index.php" ) ) {
 	require_once( "jobnotfound.php" );
 }
 
-require_once( "footer.php" );
-?>
+require_once( "footer.php" ); ?>
