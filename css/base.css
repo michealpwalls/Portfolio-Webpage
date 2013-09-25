@@ -49,13 +49,18 @@ body {
 	margin-bottom: 3%;
 }
 
-div.navigationLink, div.navigationLink:hover {
+div.navigationLink, div.navigationLink:hover, div.navigationLinkActive {
 	padding-left: 5px;
 	padding-right: 5px;
 	border: 1px solid #284C7E;
 	border-radius: 5px;
 	background: #4380D3;
 	display: inline;
+}
+
+div.navigationLinkActive {
+	border: 0px;
+	cursor: default;
 }
 
 div.navigationLink:hover {
@@ -76,4 +81,9 @@ div.navigationLink:hover {
 a.navigationLinkAnchor, a.navigationLinkAnchor:hover, a.navigationLinkAnchor:active {
 	color: #000000;
 	text-decoration: none;
+}
+
+#copyrightContainer {
+	text-align: center;
+	text-decoration: italic;
 }

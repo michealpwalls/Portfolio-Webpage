@@ -20,12 +20,6 @@
  * 
  * 
  */
-body {
-	font-size: 1.5em;
-}
+body { font-size: 1.5em; }
 
-#copyrightContainer {
-	text-align: center;
-	font-size: 1em;
-	text-decoration: italic;
-}
+#copyrightContainer { font-size: 1em; }
