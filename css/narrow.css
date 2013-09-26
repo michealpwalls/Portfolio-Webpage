@@ -1,5 +1,5 @@
 /*
- * narrow.css
+ * narrow.css	-	 Portfolio-Webpage
  * 
  * Copyright 2013 Micheal Walls <michealpwalls@gmail.com>
  * 
@@ -52,10 +52,11 @@ body {
 }
 
 div.navigationLink, div.navigationLink:hover, div.navigationLinkActive {
+	padding: 5px;
 	margin-left: 90px;
 	margin-bottom: 5px;
 	display: block;
-	width: 75%;
+	width: 65%;
 	border: 1px solid #284C7E;
 	border-radius: 5px;
 	background: #4380D3;
@@ -88,4 +89,29 @@ a.navigationLinkAnchor, a.navigationLinkAnchor:hover, a.navigationLinkAnchor:act
 	text-align: center;
 	text-decoration: italic;
 	font-size: 10px;
+}
+
+h1, h2, h3 {
+	margin: 0%;
+	margin-top: 15px;
+}
+
+div.contentBody { padding: 0%; padding-left: 2%; }
+
+div.contentHole {
+	float: right;
+	width: 75px;
+	padding: 10px;
+	background: #6996D3;
+	border: #284C7E solid 2px;
+	border-radius: 12px;
+	text-align: center;
+}
+
+img.projectImage {
+	text-align: center;
+	width: 240px;
+	height: 120px;
+	display: block;
+	margin-bottom: 10px;
 }
