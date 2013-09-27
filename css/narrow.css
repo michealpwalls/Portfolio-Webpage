@@ -115,3 +115,5 @@ img.projectImage {
 	display: block;
 	margin-bottom: 10px;
 }
+
+em { font-weight: bold; }
