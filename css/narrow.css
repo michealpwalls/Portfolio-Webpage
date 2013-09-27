@@ -87,7 +87,7 @@ a.navigationLinkAnchor, a.navigationLinkAnchor:hover, a.navigationLinkAnchor:act
 
 #copyrightContainer {
 	text-align: center;
-	text-decoration: italic;
+	font-style: italic;
 	font-size: 10px;
 }
 
@@ -117,3 +117,10 @@ img.projectImage {
 }
 
 em { font-weight: bold; }
+
+article section section { margin: 0.5%; }
+
+div.contentBodySubsection {
+	margin: 0.5%;
+	margin-left: 1%;
+}
