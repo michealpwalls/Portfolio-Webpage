@@ -123,3 +123,13 @@ div.contentBodySubsection {
 	margin: 0.5%;
 	margin-left: 1%;
 }
+
+li.subItem {
+	list-style: circle;
+	margin-left: 2em;
+}
+
+li.subSubItem {
+	list-style: square;
+	margin-left: 4em;
+}
