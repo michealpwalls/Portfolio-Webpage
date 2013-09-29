@@ -28,8 +28,11 @@
 		<title>My Personal Portfolio</title>
 		<meta charset="UTF-8">
 		<meta name="generator" content="Geany 0.20">
+		<script src="js/jquery-1.6.2.js"></script>
+		<script src="js/photo-slider.js"></script>
 		<link rel="stylesheet" href="css/wide.css" media="screen and (min-width: 599px)">
 		<link rel="stylesheet" href="css/narrow.css" media="screen and (max-width: 598px)">
+		<link rel="stylesheet" href="css/photoslider.css">
 	</head>
 	<body>
 		<header>
@@ -61,9 +64,24 @@
 					Welcome to my personal Portfolio! Here you will be able to learning more <a href="about.html" title="About Me">about me</a> and <a href="contact.html" title="Contact Me">stay connected</a> with me.<br>
 					<p>Be sure to check out the <a href="services.html" title="Services">Services</a> I currently offer, or browse over my <a href="projects.html" title="Projects">Projects</a></p>
 	<!-- Begin Picture Slider -->
-					<div id="pictureSlider">
-						
-					</div>
+					<script>
+						/**
+						 * simple-photo-slider
+						 * 
+						 * By Fabio Kenji <https://github.com/fkenji/simple-photo-slider>
+						 */
+						jQuery(function () {
+						  ps = new PhotoSlider({
+							 source: "#imager",
+							 images:[ 'img/project-portfolio.png',
+							 'img/project-cms.jpg',
+							 'img/project-teddybear.png']
+						  });
+						  ps.init();
+						});
+					</script>
+					<a href="javascript:ps.next();" OnClick="javascript:ps.next();" title="Next Slideshow Image"><div id="imager"></div></a>
+					<a href="javascript:ps.next();" OnClick="javascript:ps.next();" title="Next Slideshow Image">Next Image</a>
 	<!-- End Picture Slider -->
 	<!-- Begin Keep-Connected Panel  -->
 					<aside title="Connect with me">
