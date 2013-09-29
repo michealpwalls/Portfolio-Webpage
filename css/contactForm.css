@@ -1,0 +1,99 @@
+input:invalid ~ span.input-validation-shim::before
+{
+	color: #770d0d;
+	content: " * ";
+}
+
+span.input-validation-shim
+{
+	border: 0px;
+	display: inline;
+}
+
+input:valid ~ span.input-validation-shim::before
+{
+	color: #000000;
+	content: "";
+}
+
+span.txtWhite, fieldset fieldset legend {
+	color: #ffffff;
+}
+
+legend {
+	text-shadow: 0 1px 1px #000000;
+}
+
+fieldset, input[type=submit] {
+	border-color: #284c7e;
+}
+
+fieldset, fieldset fieldset {
+	background-color: #6996d3;
+}
+
+input[type=submit] {
+	background-color: #4380d3;
+}
+
+input[type=submit]:hover {
+	background-color: #6996d3;
+	border-color: #284c7e;
+}
+
+input[type=text], input[type=email], input[type=tel], input[type=number], textarea, select {
+	background-color: #ffffff;
+	border-color: #2978ba;
+}
+
+input[type=text]:focus, input[type=email]:focus, input[type=tel]:focus, input[type=number]:focus, textarea:focus, select:focus {
+	background-color: #ffffff;
+}
+
+input[type=text]:invalid, input[type=email]:invalid, input[type=tel]:invalid, input[type=number]:invalid, select:invalid, textarea:invalid {
+	border-color: #770d0d;
+	box-shadow: 5px 5px 2.5px #770d0d;
+}
+
+input[type=text]:valid, input[type=email]:valid, input[type=tel]:valid, input[type=number]:valid, textarea:valid {
+	border-color: #3c9412;
+}
+
+fieldset, input[type=submit] {
+	border-width: 1px;
+	border-style: solid;
+	border-radius: 15px;
+}
+
+fieldset fieldset {
+	margin: 0px;
+	padding: 0px;
+	border: 0px;
+}
+
+fieldset fieldset legend {
+	margin: 0px;
+	padding: 0px;
+	font-size: 10pt;
+	font-weight: normal;
+	text-shadow: 0 0 0;
+}
+
+fieldset fieldset label {
+	padding-left: 15px;
+	width: 35px;
+}
+
+input[type=text], input[type=email], input[type=tel], input[type=number], textarea, select {
+	border-width: 1px;
+	border-style: solid;
+}
+
+input[type=submit]:hover {
+	cursor: pointer;
+}
+
+legend {
+	font-weight: bold;
+	font-size: 12pt;
+}
