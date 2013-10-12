@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+
+<!--
+   index.html	-	Portfolio-Webpage for Mobiles
+
+   Copyright 2013 Micheal Walls <michealpwalls@gmail.com>
+
+   This program is free software; you can redistribute it and/or modify
+   it under the terms of the GNU General Public License as published by
+   the Free Software Foundation; either version 2 of the License, or
+   (at your option) any later version.
+
+   This program is distributed in the hope that it will be useful,
+   but WITHOUT ANY WARRANTY; without even the implied warranty of
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+   GNU General Public License for more details.
+
+   You should have received a copy of the GNU General Public License
+   along with this program; if not, write to the Free Software
+   Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
+   MA 02110-1301, USA.
+-->
+
+<html>
+	<head>
+		<title>Micheal Walls' Portfolio</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.1/jquery.mobile-1.2.1.min.css">
+		<link rel="stylesheet" href="css/mobile.css">
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+		<script src="http://code.jquery.com/mobile/1.2.1/jquery.mobile-1.2.1.min.js"></script>
+		<script src="js/mobile.js"></script>
+	</head>
+	<body>
+
+	<!-- BEGIN HOMEPAGE -->
+		<div data-role="page" id="home">
+
+		<!-- BEGIN HOMEPAGE HEADER -->
+			<div data-role="header">
+			<img src="img/michealpw_80x80.png" alt="Logo">&nbsp;&nbsp;
+			<span id="page-title">Micheal Walls</span>
+			<!-- BEGIN HOMEPAGE HEADER NAVIGATION -->
+				<div data-role="navbar">
+					<ul>
+						<li><a href="#home" data-role="button" data-transition="fade">Home</a></li>
+						<li><a href="#about" data-role="button" data-transition="fade">About Me</a></li>
+						<li><a href="#contact" data-role="button" data-transition="fade">Contact Me</a></li>
+					</ul>
+				</div>
+			<!-- END HOMEPAGE HEADER NAVIGATION -->
+			</div>
+		<!-- END HOMEPAGE HEADER -->
+
+		<!-- BEGIN HOMEPAGE CONTENT -->
+			<div data-role="content">
+			<!-- BEGIN HOMEPAGE CONTENT NAVIGATION -->
+				<div data-role="navbar" data-iconpos="top">
+					<ul>
+						<li><a href="#page1" data-transition="fade" data-theme="" data-icon="">Projects</a></li>
+						<li><a href="#page1" data-transition="fade" data-theme="" data-icon="">Services</a></li>
+					</ul>
+				</div>
+			<!-- END HOMEPAGE CONTENT NAVIGATION -->
+			
+			<!-- BEGIN HOMEPAGE CONTENT BLOCK -->
+				<div data-role="collapsible-set">
+					<div data-role="collapsible" data-collapsed="false">
+						<h3>Section Header</h3>
+					</div>
+					<div data-role="collapsible" data-collapsed="false">
+						<h3>Section Header</h3>
+					</div>
+					<div data-role="collapsible" data-collapsed="false">
+						<h3>Section Header</h3>
+					</div>
+					<div data-role="collapsible" data-collapsed="false">
+						<h3>Section Header</h3>
+					</div>
+				</div>
+			<!-- END HOMEPAGE CONTENT BLOCK -->
+			</div>
+		<!-- END HOMEPAGE CONTENT -->
+
+		<!-- BEGIN HOMEPAGE FOOTER -->
+			<div data-role="footer">
+				<h4>&#xa9;20013 Micheal Walls<br>&#x3c;<a href="mailto:michealpwalls@gmail.com">michealpwalls@gmail.com</a>&#x3e;</h4>
+			</div>
+		<!-- END HOMEPAGE FOOTER -->
+
+		</div>
+	<!-- END HOMEPAGE -->
+
+	<!-- BEGIN ABOUT ME -->
+	<!-- END ABOUT ME -->
+
+	<!-- BEGIN CONTACT ME -->
+	<!-- END CONTACT ME -->
+
+	</body>
+</html>
