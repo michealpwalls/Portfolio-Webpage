@@ -30,6 +30,7 @@
 		<meta name="generator" content="Geany 0.20">
 		<script src="js/jquery-1.6.2.js"></script>
 		<script src="js/photo-slider.js"></script>
+		<script src="js/detectmobilebrowser.js"></script>
 		<link rel="stylesheet" href="css/wide.css" media="screen and (min-width: 599px)">
 		<link rel="stylesheet" href="css/narrow.css" media="screen and (max-width: 598px)">
 		<link rel="stylesheet" href="css/photoslider.css">
@@ -83,6 +84,19 @@
 					<a href="javascript:ps.next();" OnClick="javascript:ps.next();" title="Next Slideshow Image"><div id="imager"></div></a>
 					<a href="javascript:ps.next();" OnClick="javascript:ps.next();" title="Next Slideshow Image">Next Image</a>
 	<!-- End Picture Slider -->
+
+<!-- DEBUG -->
+					<p>
+					<script>
+						if( jQuery.browser.mobile ) {
+							document.write( "<strong>A Mobile Browser was Detected!</strong><br>\n" );
+						} else {
+							document.write( "<strong>A Mobile Browser was NOT detected</strong><br>\n" );
+						}
+					</script>
+					</p>
+<!-- DEBUG -->
+
 	<!-- Begin Keep-Connected Panel  -->
 					<aside title="Connect with me">
 						<div class="contentHole">
