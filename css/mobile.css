@@ -4,6 +4,8 @@
  * mobile.css	-	Portfolio-Webpage for Mobiles
  *
  * Copyright 2013 Micheal Walls <michealpwalls@gmail.com>
+ * 
+ * 	Note: Portions Copyright 2013 Brad Birdsall (swipe.js & styles)
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -54,4 +56,23 @@ li.subItem {
 li.subSubItem {
 	list-style: square;
 	margin-left: 4em;
+}
+
+/**
+ * swipe.js styles
+ * Copyright Brad Birdsall
+ */
+.swipe {
+	overflow: hidden;
+	visibility: hidden;
+	position: relative;
+}
+.swipe-wrap {
+	overflow: hidden;
+	position: relative;
+}
+.swipe-wrap > div {
+	float:left;
+	width:100%;
+	position: relative;
 }

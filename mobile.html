@@ -32,6 +32,7 @@
 		<script src="http://code.jquery.com/mobile/1.2.1/jquery.mobile-1.2.1.min.js"></script>
 		<script src="js/mobile.js"></script>
 		<script src="js/swipe.js"></script>
+		<script src="js/cwd.js"></script>
 	</head>
 	<body>
 
@@ -75,16 +76,29 @@
 					Welcome to my personal Portfolio! Here you will be able to learn more <a href="#about" title="About Me">about me</a> and <a href="#contact" title="Contact Me">stay connected</a> with me.<br>
 					<p>Be sure to check out the <a href="#services" title="Services">Services</a> I currently offer, or browse over my <a href="#projects" title="Projects">Projects</a></p>
 					
-					<!-- DO THE PHOTO-SLIDER HERE WITH SWIPE -->
-					
+		<!-- DO THE PHOTO-SLIDER HERE WITH SWIPE CAPABILITIES -->
+			<!-- USING swipe.js by Brad Birdsall -->
+					<div id='slider' class='swipe'>
+						<div class='swipe-wrap'>
+							<div><img class="projectImage" src="img/project-teddybear.png" alt="Project: Bedtime Teddybear (Arduino)"></div>
+							<div><img class="projectImage" src="img/project-portfolio.png" alt="Project: Portfolio Webpage (HTML5)"></div>
+							<div><img class="projectImage" src="img/project-cms.jpg" alt="Project: Content Management System (PHP, MySQL)"></div>
+						</div>
+						<p><a href="javascript:mySwipe.prev();">Prev.</a>&nbsp;|&nbsp;<a href="javascript:mySwipe.next();">Next</a></p>
+					</div>
 				</section>
+		<!-- END PHOTO-SLIDER -->
 			<!-- END HOMEPAGE CONTENT BLOCK -->
 			</div>
 		<!-- END HOMEPAGE CONTENT -->
 
 		<!-- BEGIN HOMEPAGE FOOTER -->
 			<div data-role="footer">
-				<h4>&#xa9;20013 Micheal Walls<br>&#x3c;<a href="mailto:michealpwalls@gmail.com">michealpwalls@gmail.com</a>&#x3e;</h4>
+				<h4>
+					&#xa9;20013 Micheal Walls<br>
+					&#x3c;<a href="mailto:michealpwalls@gmail.com">michealpwalls@gmail.com</a>&#x3e;<br>
+					Or try the <a href="#" onClick="javascript:window.location=cwd+'index.html?nomobile=true';">Desktop version</a> of this site.
+				</h4>
 			</div>
 		<!-- END HOMEPAGE FOOTER -->
 

@@ -1,5 +1,5 @@
 /**
- * mobile.js	-	Portfolio-Webpage for Mobiles
+ * cwd.js	-	Portfolio-Webpage for Mobiles
  *
  * Copyright 2013 Micheal Walls <michealpwalls@gmail.com>
  *
@@ -18,11 +18,16 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
  * MA 02110-1301, USA.
  **/
+ 
+cwd = window.location.protocol + "//" + window.location.host;
+var directoryArray = window.location.pathname.split( '/' );
+var shortenedDirectoryString = '';
 
-$(document).ready(
-	function() {
-		// We're Ready..
-		window.mySwipe = Swipe(document.getElementById('slider'));
+for( var i = 0; i < directoryArray.length-1; i++ ) {
+	shortenedDirectoryString += directoryArray[i] + "/";
+}
 
-	}
-);
+cwd = cwd + shortenedDirectoryString;
+
+delete window.directoryArray;
+delete window.shortenedDirectoryString;

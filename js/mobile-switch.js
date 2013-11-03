@@ -1,5 +1,5 @@
 /**
- * mobile.js	-	Portfolio-Webpage for Mobiles
+ * mobile-switch.js	-	Portfolio-Webpage for Mobiles
  *
  * Copyright 2013 Micheal Walls <michealpwalls@gmail.com>
  *
@@ -18,11 +18,11 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
  * MA 02110-1301, USA.
  **/
-
-$(document).ready(
-	function() {
-		// We're Ready..
-		window.mySwipe = Swipe(document.getElementById('slider'));
-
+ 
+if( window.location.search.substr(1) == "nomobile=true" ) {
+	/** nomobile override enabled **/
+} else {
+	if( jQuery.browser.mobile ) {
+		window.location = cwd + 'mobile.html';
 	}
-);
+}
