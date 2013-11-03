@@ -11,10 +11,10 @@ var PhotoSlider = function (spec) {
     function _init () {      
         var   sliderImage = null,
               sourceDiv = $(spec.source),
-              buttonsDiv = $('<div id="buttons"> </div>');
+              buttonsDiv = $('<div class="buttons"> </div>');
 
       _addImage(sourceDiv);
-      _addPhotoSliderButtons(sourceDiv, buttonsDiv);      
+      _addPhotoSliderButtons(sourceDiv, buttonsDiv);
       _get(0);
     }
     
@@ -24,7 +24,7 @@ var PhotoSlider = function (spec) {
       $.each(spec.images, function(e){
         var   img =  new Image();
         img.src = spec.images[e];
-        img.width = 320;
+        /** img.width = 320; **/
         ul.append($("<li>").append(img).hide());
 
       });
@@ -87,7 +87,7 @@ var PhotoSlider = function (spec) {
     }
     
     function _slideshowStart () {
-      intervalId = setInterval(function() { _next() }, 5000);
+      intervalId = setInterval(function() { _next() }, 4000);
     }
     
     function _slideshowStop () {

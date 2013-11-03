@@ -76,3 +76,15 @@ li.subSubItem {
 	width:100%;
 	position: relative;
 }
+
+img.slideArrows {
+	padding: 1%;
+}
+
+.left { float: left; }
+.right { float: right; }
+
+img.buttonIcon {
+	width: 25px;
+	height: 25px;
+}

@@ -1,27 +1,27 @@
 /**
- * main.css		-		simple-photo-slider
+ * photoslider.css		-		simple-photo-slider
  * 
  * By Fabio Kenji <https://github.com/fkenji/simple-photo-slider>
  */
 
 .selected{
-  background-color:#d85f2c;  
+  background-color:#284C7E;  
 }
 
-.photo-slider{
-  list-style-type:none;
+.photo-slider {
+	list-style-type:none;
 }
 
 .marker{
   width:40px; 
   height:7px;
-  border:1px #d85f2c solid;
+  border:1px #284C7E solid;
   display:inline-block;
   cursor:pointer;
   margin-left:5px;
 }
 
-#buttons{
+div.buttons{
   position:relative;
   margin-top:5px;
 }

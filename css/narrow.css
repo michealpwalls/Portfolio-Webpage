@@ -134,3 +134,7 @@ li.subSubItem {
 	list-style: square;
 	margin-left: 4em;
 }
+
+ul.photo-slider li img {
+	width: 300px;
+}
