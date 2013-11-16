@@ -137,3 +137,5 @@ li.subSubItem {
 ul.photo-slider li img {
 	width: 500px;
 }
+
+.floatRight { float: right; }

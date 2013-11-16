@@ -30,8 +30,8 @@
 		<title>My Personal Portfolio: eMail Me</title>
 		<meta charset="UTF-8">
 		<meta name="generator" content="Geany 0.20">
-		<link rel="stylesheet" href="css/wide.css" media="screen and (min-width: 599px)">
-		<link rel="stylesheet" href="css/narrow.css" media="screen and (max-width: 598px)">
+		<link rel="stylesheet" href="css/wide.css" media="screen and (min-width: 674px)">
+		<link rel="stylesheet" href="css/narrow.css" media="screen and (max-width: 673px)">
 		<link rel="stylesheet" href="css/contactForm.css">
 	</head>
 	<body>
@@ -48,6 +48,7 @@
 						<div class="navigationLink" title="Services" OnClick="javascript:window.location='services.html';"><a class="navigationLinkAnchor" href="services.html">Services</a></div>
 						<div class="navigationLink" title="My GitHub" OnClick="javascript:newWindow=window.open('https://github.com/michealpwalls');"><a class="navigationLinkAnchor" href="https://github.com/michealpwalls" target="_blank">GitHub</a></div>
 						<div class="navigationLinkActive">Contact Me</div>
+						<div class="navigationLink" title="Business Contacts" OnClick="javascript:window.location='bcontacts.php';"><a class="navigationLinkAnchor" href="bcontacts.php">Business Contacts</a></div>
 					</div>
 <!-- End Site Navigation -->
 				</nav>
