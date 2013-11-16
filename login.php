@@ -106,7 +106,7 @@
 				$object_dbConnection = null;
 				unset( $object_dbConnection );
 
-				// Test that we retreived something
+				// Test that we actually have a PDOStatement object
 				if( is_bool($object_dbResultSet) ) {
 ?>
 					<h2>Query Failure!</h2>
@@ -115,14 +115,14 @@
 					</div>
 <?php
 				} else {
-
-					$int_dbFirstColumn = (int) $object_dbResultSet->fetchColumn();
-					if( empty($int_dbFirstColumn) ) {
-						// First column (User id) is empty
+					// Test that we actually retrieved something (PDO is cray cray!)
+					$array_dbResultSet = $object_dbResultSet->fetch();
+					if( empty($array_dbResultSet[0]) ) {
 ?>
 					<h2>Login Failed!</h2>
 					<div class="contentBody">
 						A matching user and password could not be found in the database! You either typed your details wrong, or you do not have a user account.<br>
+						<a href="javascript:history.back(1);" title="Go back">Go back</a> and try again.
 					</div>
 <?php
 					} else {
@@ -130,7 +130,8 @@
 						session_start();
 
 						// We found a user, so lets store their user info in the session
-						$_SESSION['login-userID'] = (int) $object_dbResultSet->fetchColumn();
+						$_SESSION['login-userID'] = (int) $array_dbResultSet[0];
+						$_SESSION['login-userName'] = (string) $array_dbResultSet[2];
 
 						// Just assume they're an admin :P
 						$_SESSION['login-isAdmin'] = (bool) true;
@@ -141,17 +142,20 @@
 						If you're not redirected, just <a href="bcontacts.php" title="Business Contacts">click here</a>.
 					</div>
 <?php
-					}// flow control for non-existent users
+						// Destroy the resultSet
+						$object_dbResultSet = null;
+						unset( $object_dbResultSet );
+						
+						// Redirect the user to the Business Contacts
+						require_once( "lib/directoryURL.php" );
+						header( "Location:" . directoryURL() . "/bcontacts.php" );
+					}// flow control for non-existent user or bad password
 
-				}// flow control for query
+				}// flow control for Database query
 				
 				// Destroy the resultSet
 				$object_dbResultSet = null;
 				unset( $object_dbResultSet );
-				
-				// Redirect the user to the Business Contacts
-				require_once( "lib/directoryURL.php" );
-				header( "Location:" . directoryURL() . "/bcontacts.php" );
 			} else {
 				unset( $object_dbConnection );
 ?>

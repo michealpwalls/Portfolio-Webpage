@@ -63,7 +63,6 @@
 					<h1>Business Contacts</h1>
 				</header>
 				<div class="contentBody">
-					<span class="floatRight"><a href="logout.php" title="logout">logout</a></span>
 <?php
 
 	// Start a session
@@ -82,12 +81,18 @@
 			// Close the database connection
 			$object_dbConnection = null;
 			unset( $object_dbConnection );
-			
-			if( $object_dbResultSet === 0 || $object_dbResultSet === false ) {
 ?>
-					<h2>Business Contacts</h2>
+					<span class="floatRight"><a href="logout.php" title="logout">logout</a></span>
+					<p>
+						Welcome, <?php echo( $_SESSION['login-userName'] ); ?>! Here are my <strong>private</strong> Business Contacts:
+					</p>
+<?php
+			// Make sure we have an object to work with
+			if( is_bool($object_dbResultSet) ) {
+?>
+					<h2>Query Failure!</h2>
 					<div class="contentBody">
-						There are no business contacts in the Database.
+						The query did not execute properly! Cannot continue.
 					</div>
 <?php
 			} else {
@@ -98,21 +103,23 @@
 <?php
 				// We're ready to iterate through the business contacts!
 				while( $array_dbRow = $object_dbResultSet->fetch() ) {
-					echo( "							<div class=\"businessContact\">\n" );
-					echo( "								<span class=\"businessContactCell\">" . $array_dbRow['id'] . "</span>\n" );
-					echo( "								<span class=\"businessContactCell\">" . $array_dbRow['fname'] . "</span>\n" );
-					echo( "								<span class=\"businessContactCell\">" . $array_dbRow['lname'] . "</span>\n" );
-					echo( "								<span class=\"businessContactCell\">" . $array_dbRow['phone'] . "</span>\n" );
-					echo( "								<span class=\"businessContactCell\">" . $array_dbRow['email'] . "</span>\n" );
-					echo( "							</div>\n" );
+?>
+							<div class="businessContact">
+								<span class="businessContactCell"><?=$array_dbRow['id'];?></span>
+								<span class="businessContactCell"><?=$array_dbRow['fname'];?></span>
+								<span class="businessContactCell"><?=$array_dbRow['lname'];?></span>
+								<span class="businessContactCell"><?=$array_dbRow['phone'];?></span>
+								<span class="businessContactCell"><?=$array_dbRow['email'];?></span>
+							</div>
+<?php
 				}// end while loop
 ?>
 						</div>
 					</div>
 <?php
-			}// flow control for DB query. Returns 0 results if there are no contacts or false on DB errors
+			}// flow control for DB query
 
-			// Destroy the resultSet
+			// Destroy the resultSet object
 			$object_dbResultSet = null;
 			unset( $object_dbResultSet );
 		} else {	// Didn't connect to the DB
