@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 <!--
-   mobile.html	-	Portfolio-Webpage for Mobiles
+   mobile.php	-	Portfolio-Webpage for Mobiles
 
    Copyright 2013 Micheal Walls <michealpwalls@gmail.com>
 
@@ -49,6 +49,9 @@
 						<li><a href="#home" data-role="button" data-transition="fade">Home</a></li>
 						<li><a href="#about" data-role="button" data-transition="fade">About Me</a></li>
 						<li><a href="#contact" data-role="button" data-transition="fade">Contact Me</a></li>
+					</ul>
+					<ul>
+						<li><a href="#bcontacts" data-role="button" data-transition="fade">Business Contacts</a></li>
 					</ul>
 				</div>
 			<!-- END HOMEPAGE HEADER NAVIGATION -->
@@ -118,6 +121,9 @@
 						<li><a href="#home" data-role="button" data-transition="fade">Home</a></li>
 						<li><a href="#about" data-role="button" data-transition="fade">About Me</a></li>
 						<li><a href="#contact" data-role="button" data-transition="fade">Contact Me</a></li>
+					</ul>
+					<ul>
+						<li><a href="#bcontacts" data-role="button" data-transition="fade">Business Contacts</a></li>
 					</ul>
 				</div>
 			<!-- END ABOUT ME HEADER NAVIGATION -->
@@ -221,6 +227,9 @@
 						<li><a href="#about" data-role="button" data-transition="fade">About Me</a></li>
 						<li><a href="#contact" data-role="button" data-transition="fade">Contact Me</a></li>
 					</ul>
+					<ul>
+						<li><a href="#bcontacts" data-role="button" data-transition="fade">Business Contacts</a></li>
+					</ul>
 				</div>
 			<!-- END CONTACT ME HEADER NAVIGATION -->
 			</div>
@@ -300,6 +309,9 @@
 						<li><a href="#about" data-role="button" data-transition="fade">About Me</a></li>
 						<li><a href="#contact" data-role="button" data-transition="fade">Contact Me</a></li>
 					</ul>
+					<ul>
+						<li><a href="#bcontacts" data-role="button" data-transition="fade">Business Contacts</a></li>
+					</ul>
 				</div>
 			<!-- END PROJECTS HEADER NAVIGATION -->
 			</div>
@@ -370,6 +382,9 @@
 						<li><a href="#home" data-role="button" data-transition="fade">Home</a></li>
 						<li><a href="#about" data-role="button" data-transition="fade">About Me</a></li>
 						<li><a href="#contact" data-role="button" data-transition="fade">Contact Me</a></li>
+					</ul>
+					<ul>
+						<li><a href="#bcontacts" data-role="button" data-transition="fade">Business Contacts</a></li>
 					</ul>
 				</div>
 			<!-- END SERVICES HEADER NAVIGATION -->
@@ -451,6 +466,149 @@
 
 		</div>
 	<!-- END SERVICES -->
+
+<?php
+
+// begin the session
+session_start();
+
+?>
+
+	<!-- BEGIN BUSINESS CONTACTS -->
+		<div data-role="page" id="bcontacts">
+
+		<!-- BEGIN BUSINESS CONTACTS HEADER -->
+			<div data-role="header">
+			<img src="img/logo.png" alt="Logo">&nbsp;&nbsp;
+			<span id="page-title">Micheal Walls</span>
+			<!-- BEGIN BUSINESS CONTACTS HEADER NAVIGATION -->
+				<div data-role="navbar">
+					<ul>
+						<li><a href="#home" data-role="button" data-transition="fade">Home</a></li>
+						<li><a href="#about" data-role="button" data-transition="fade">About Me</a></li>
+						<li><a href="#contact" data-role="button" data-transition="fade">Contact Me</a></li>
+					</ul>
+					<ul>
+						<li><a href="#bcontacts" data-role="button" data-transition="fade">Business Contacts</a></li>
+					</ul>
+				</div>
+			<!-- END BUSINESS CONTACTS HEADER NAVIGATION -->
+			</div>
+		<!-- END BUSINESS CONTACTS HEADER -->
+
+		<!-- BEGIN BUSINESS CONTACTS CONTENT -->
+			<div data-role="content">
+			<!-- BEGIN HOMEPAGE CONTENT NAVIGATION -->
+				<div data-role="navbar" data-iconpos="top">
+					<ul>
+						<li><a href="#projects" data-transition="fade" data-theme="" data-icon=""><img class="buttonIcon left" src="img/project-icon.png">Projects</a></li>
+						<li><a href="#services" data-transition="fade" data-theme="" data-icon=""><img class="buttonIcon right" src="img/services-icon.png">Services</a></li>
+					</ul>
+				</div>
+			<!-- END BUSINESS CONTACTS CONTENT NAVIGATION -->
+			
+			<!-- BEGIN BUSINESS CONTACTS CONTENT BLOCK -->
+<?php
+	/** Check if the user is logged in as an admin. **/
+	if( $_SESSION['login-isAdmin'] === true ) {
+		// Connect to the database
+		require_once( "dbconnect.php" );
+
+		// Make sure we actually connected
+		if( !is_null( $object_dbConnection ) ) {
+			// Query the DB for the contacts
+			$object_dbResultSet = $object_dbConnection->query( "SELECT * FROM bcontacts ORDER BY fname;" );
+
+			// Close the database connection
+			$object_dbConnection = null;
+			unset( $object_dbConnection );
+?>
+					<span class="floatRight"><a href="logout.php" title="logout">logout</a></span>
+					<p>
+						Welcome, <?php echo( $_SESSION['login-userName'] ); ?>! Here are my <strong>private</strong> Business Contacts:
+					</p>
+<?php
+			// Make sure we have an object to work with
+			if( is_bool($object_dbResultSet) ) {
+?>
+					<h2>Query Failure!</h2>
+					<div class="contentBody">
+						The query did not execute properly! Cannot continue.
+					</div>
+<?php
+			} else {
+?>
+					<h2>Business Contacts</h2>
+					<div class="contentBody">
+						<div id="businessContacts">
+<?php
+				// We're ready to iterate through the business contacts!
+				while( $array_dbRow = $object_dbResultSet->fetch() ) {
+?>
+							<h4><?=$array_dbRow['fname'];?> <?=$array_dbRow['lname'];?></h4>
+							<div class="businessContact" title="<?=$array_dbRow['fname'];?> <?=$array_dbRow['lname'];?>">
+								&nbsp;&nbsp;Phone: <a href="tel:<?=$array_dbRow['phone'];?>" title="Telephone Number"><?=$array_dbRow['phone'];?></a></span><br>
+								&nbsp;&nbsp;eMail: <a href="mailto:<?=$array_dbRow['email'];?>" title="Electronic Mail Address"><?=$array_dbRow['email'];?></a>
+							</div>
+							
+							<script> $( ".businessContact" ).dialog({ autoOpen: false }); </script>
+<?php
+				}// end while loop
+?>
+						</div>
+					</div>
+<?php
+			}// flow control for DB query
+
+			// Destroy the resultSet object
+			$object_dbResultSet = null;
+			unset( $object_dbResultSet );
+		} else {	// Didn't connect to the DB
+			unset( $object_dbConnection );
+?>
+					<h2>Connection Failure!</h2>
+					<div class="contentBody">
+						For some reason, there was a problem connecting to the Database. Cannot continue.
+					</div>
+<?php
+		}// flow control to catch DB connection failures.
+	} else {
+		// If the user is not logged in, show a log-in form
+?>
+					<h2>Log-in</h2>
+					<div class="contentBody">
+						Before you can access this section of the page, you must first log-in.<br>
+						<form method="POST" action="login_mobile.php">
+							<fieldset>
+								<legend>Please Log-in</legend>
+								<label for="login-username">Username</label><br>
+								<input name="login-username" type="text" required><span id="input-validation-shim1"></span><br><br>
+								<label for="login-password">Password</label><br>
+								<input name="login-password" type="password" required><span id="input-validation-shim2"></span><br><br>
+								<input type="submit" value="Send">
+							</fieldset>
+						</form>
+					</div>
+<?php
+	}// End of Log-in if..else
+?>
+
+			<!-- END BUSINESS CONTACTS CONTENT BLOCK -->
+			</div>
+		<!-- END BUSINESS CONTACTS CONTENT -->
+
+		<!-- BEGIN BUSINESS CONTACTS FOOTER -->
+			<div data-role="footer">
+				<h4>
+					&#xa9;20013 Micheal Walls<br>
+					&#x3c;<a href="mailto:michealpwalls@gmail.com">michealpwalls@gmail.com</a>&#x3e;<br>
+					Or try the <a href="#" onClick="javascript:window.location=cwd+'index.html?nomobile=true';">Desktop version</a> of this site.
+				</h4>
+			</div>
+		<!-- END BUSINESS CONTACTS FOOTER -->
+
+		</div>
+	<!-- END BUSINESS CONTACTS -->
 
 	</body>
 </html>
