@@ -35,6 +35,9 @@
 		<link rel="stylesheet" href="css/wide.css" media="screen and (min-width: 674px)">
 		<link rel="stylesheet" href="css/narrow.css" media="screen and (max-width: 673px)">
 		<link rel="stylesheet" href="css/contactForm.css">
+		<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css">
+		<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+		<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
 	</head>
 	<body>
 		<header>
@@ -76,7 +79,7 @@
 		// Make sure we actually connected
 		if( !is_null( $object_dbConnection ) ) {
 			// Query the DB for the contacts
-			$object_dbResultSet = $object_dbConnection->query( "SELECT * FROM bcontacts;" );
+			$object_dbResultSet = $object_dbConnection->query( "SELECT * FROM bcontacts ORDER BY fname;" );
 
 			// Close the database connection
 			$object_dbConnection = null;
@@ -99,17 +102,24 @@
 ?>
 					<h2>Business Contacts</h2>
 					<div class="contentBody">
-						<div id="bussinessContacts">
+						<div id="businessContacts">
 <?php
 				// We're ready to iterate through the business contacts!
 				while( $array_dbRow = $object_dbResultSet->fetch() ) {
 ?>
 							<div class="businessContact">
-								<span class="businessContactCell"><?=$array_dbRow['id'];?></span>
-								<span class="businessContactCell"><?=$array_dbRow['fname'];?></span>
-								<span class="businessContactCell"><?=$array_dbRow['lname'];?></span>
-								<span class="businessContactCell"><?=$array_dbRow['phone'];?></span>
-								<span class="businessContactCell"><?=$array_dbRow['email'];?></span>
+								<a href="#" id="link_<?=$array_dbRow['fname'];?>-<?=$array_dbRow['lname'];?>" title="Open <?=$array_dbRow['fname'];?> <?=$array_dbRow['lname'];?>'s Contact Details"><?=$array_dbRow['fname'];?> <?=$array_dbRow['lname'];?></a>
+								<div id="dialog_<?=$array_dbRow['fname'];?>-<?=$array_dbRow['lname'];?>" title="<?=$array_dbRow['fname'];?> <?=$array_dbRow['lname'];?>">
+									Phone: <a href="tel:<?=$array_dbRow['phone'];?>" title="Telephone Number"><?=$array_dbRow['phone'];?></a></span><br>
+									eMail: <a href="mailto:<?=$array_dbRow['email'];?>" title="Electronic Mail Address"><?=$array_dbRow['email'];?></a>
+								</div>
+								
+								<script>
+									$( "#dialog_<?=$array_dbRow['fname'];?>-<?=$array_dbRow['lname'];?>" ).dialog({ autoOpen: false });
+									$( "#link_<?=$array_dbRow['fname'];?>-<?=$array_dbRow['lname'];?>" ).click(function() {
+										$( "#dialog_<?=$array_dbRow['fname'];?>-<?=$array_dbRow['lname'];?>" ).dialog( "open" );
+									});
+								</script>
 							</div>
 <?php
 				}// end while loop
@@ -141,9 +151,9 @@
 							<fieldset>
 								<legend>Please Log-in</legend>
 								<label for="login-username">Username</label><br>
-								<input name="login-username" type="text" required><span class="input-validation-shim"></span><br><br>
+								<input name="login-username" type="text" required><span id="input-validation-shim1"></span><br><br>
 								<label for="login-password">Password</label><br>
-								<input name="login-password" type="password" required><span class="input-validation-shim"></span><br><br>
+								<input name="login-password" type="password" required><span id="input-validation-shim2"></span><br><br>
 								<input type="submit" value="Send">
 							</fieldset>
 						</form>

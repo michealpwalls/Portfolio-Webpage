@@ -1,19 +1,67 @@
-input:invalid ~ span.input-validation-shim::before
-{
-	color: #770d0d;
-	content: " * ";
-}
-
-span.input-validation-shim
+#input-validation-shim1, #input-validation-shim2, #input-validation-shim3
 {
 	border: 0px;
 	display: inline;
 }
 
-input:valid ~ span.input-validation-shim::before
+input[name=login-username]:valid ~ #input-validation-shim1::before
 {
 	color: #000000;
 	content: "";
+}
+
+input[name=login-username]:invalid ~ #input-validation-shim1::before
+{
+	color: #770d0d;
+	content: " * ";
+}
+
+input[name=login-password]:valid ~ #input-validation-shim2::before
+{
+	color: #000000;
+	content: "";
+}
+
+input[name=login-password]:invalid ~ #input-validation-shim2::before
+{
+	color: #770d0d;
+	content: " * ";
+}
+
+input[name=email-name]:valid ~ #input-validation-shim1::before
+{
+	color: #000000;
+	content: "";
+}
+
+input[name=email-name]:invalid ~ #input-validation-shim1::before
+{
+	color: #770d0d;
+	content: " * ";
+}
+
+input[name=email-address]:valid ~ #input-validation-shim2::before
+{
+	color: #000000;
+	content: "";
+}
+
+input[name=email-address]:invalid ~ #input-validation-shim2::before
+{
+	color: #770d0d;
+	content: " * ";
+}
+
+input[name=email-message]:valid ~ #input-validation-shim3::before
+{
+	color: #000000;
+	content: "";
+}
+
+input[name=email-message]:invalid ~ #input-validation-shim3::before
+{
+	color: #770d0d;
+	content: " * ";
 }
 
 span.txtWhite, fieldset fieldset legend {

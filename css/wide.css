@@ -139,3 +139,11 @@ ul.photo-slider li img {
 }
 
 .floatRight { float: right; }
+
+.businessContactCell, .businessContactTitleCell {
+	display: inline;
+}
+
+.businessContact:nth-of-type(even) {
+	background: #6996D3;
+}
