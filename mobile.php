@@ -26,13 +26,19 @@
 		<title>Micheal Walls' Portfolio (Mobile)</title>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.1/jquery.mobile-1.2.1.min.css">
+		<link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.css">
 		<link rel="stylesheet" href="css/mobile.css">
-		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-		<script src="http://code.jquery.com/mobile/1.2.1/jquery.mobile-1.2.1.min.js"></script>
+		<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+		<script src="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.js"></script>
 		<script src="js/mobile.js"></script>
 		<script src="js/swipe.js"></script>
 		<script src="js/cwd.js"></script>
+<?php
+
+	// begin the session
+	session_start();
+
+?>
 	</head>
 	<body>
 
@@ -467,15 +473,16 @@
 		</div>
 	<!-- END SERVICES -->
 
-<?php
-
-// begin the session
-session_start();
-
-?>
-
 	<!-- BEGIN BUSINESS CONTACTS -->
-		<div data-role="page" id="bcontacts">
+<!--
+	Since this is somewhat of a "dynamic" page in that, if the user is logged in
+	we show the Contacts and if not, we show a login form, I disable the use of
+	caching with the data-cache="false" attribute on the page's div element.
+	
+	This solves the SESSION bugs (Requiring users to manually refresh after
+	having successfully logged in, in order to see the Contacts).
+-->
+		<div data-role="page" id="bcontacts" data-cache="never">
 
 		<!-- BEGIN BUSINESS CONTACTS HEADER -->
 			<div data-role="header">
@@ -523,7 +530,13 @@ session_start();
 			$object_dbConnection = null;
 			unset( $object_dbConnection );
 ?>
-					<span class="floatRight"><a href="logout.php" title="logout">logout</a></span>
+<!--
+	The use of the rel="external" attribute on anchor elements prevents JQuery Mobile
+	from loading the resource into this current document (Or something, LOL)
+	
+	This solves the bug that 'caused the logout process to complete break the App's state/mode
+-->
+					<span class="floatRight"><a href="logout_mobile.php" title="logout" rel="external">logout</a></span>
 					<p>
 						Welcome, <?php echo( $_SESSION['login-userName'] ); ?>! Here are my <strong>private</strong> Business Contacts:
 					</p>
@@ -578,7 +591,13 @@ session_start();
 					<h2>Log-in</h2>
 					<div class="contentBody">
 						Before you can access this section of the page, you must first log-in.<br>
-						<form method="POST" action="login_mobile.php">
+						<!--
+							I use the data-ajax="false" attribute on the form element to disable JQuery Mobile's
+							use of AJAX.
+							
+							This fixes the bug that caused the App's state/mode to become unstable and "glitchy"
+						-->
+						<form method="POST" action="login_mobile.php" data-ajax="false">
 							<fieldset>
 								<legend>Please Log-in</legend>
 								<label for="login-username">Username</label><br>

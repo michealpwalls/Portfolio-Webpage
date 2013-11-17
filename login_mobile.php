@@ -156,7 +156,7 @@
 					<h2>Login Succeeded!</h2>
 					<div class="contentBody">
 						A matching user and password was found in the database! You should be redirected to the Business Contacts.<br>
-						If you're not redirected, just <a href="mobile.php#bcontacts" title="Business Contacts">click here</a>.
+						If you're not redirected, just <a href="mobile.php?redirect=bcontacts" title="Business Contacts">click here</a>.
 					</div>
 <?php
 						// Destroy the resultSet
@@ -165,7 +165,7 @@
 						
 						// Redirect the user to the Business Contacts
 						require_once( "lib/directoryURL.php" );
-						header( "Location:" . directoryURL() . "/mobile.php#bcontacts" );
+						header( "Location:" . directoryURL() . "/mobile.php?redirect=bcontacts" );
 					}// flow control for non-existent user or bad password
 
 				}// flow control for Database query
