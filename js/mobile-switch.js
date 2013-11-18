@@ -23,6 +23,6 @@ if( window.location.search.substr(1) == "nomobile=true" ) {
 	/** nomobile override enabled **/
 } else {
 	if( jQuery.browser.mobile ) {
-		window.location = cwd + 'mobile.html';
+		window.location = cwd + 'mobile.php';
 	}
 }
