@@ -1,6 +1,9 @@
 <?php
 /*
- *      logout.php
+ *      logout.php	-	 portfolio
+ *
+ * 		A component of the Login section. Destroys the user's Session to
+ * 		securely log them out.
  *      
  *      Copyright 2013 Micheal Walls <michealpwalls@gmail.com>
  *      

@@ -2,9 +2,9 @@
 
 <?php
  	/*
-	 * login_mobile.php	-	 Portfolio-Webpage
+	 * login_mobile.php	-	 portfolio
 	 *
-	 * Login section of the Portfolio
+	 * Login section of the (Mobile) Portfolio
 	 * 
 	 * Copyright 2013 Micheal Walls <michealpwalls@gmail.com>
 	 * 

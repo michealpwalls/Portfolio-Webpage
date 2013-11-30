@@ -2,7 +2,9 @@
 
 <?php
 /*
- * send_email.php
+ * send_email.php	-	 portfolio
+   
+   send_email component for the Contact Me section of the Portfolio
  * 
  * Copyright 2013 Micheal Walls <michealpwalls@gmail.com>
  * 
@@ -27,7 +29,7 @@
 ?>
 <html lang="en">
 	<head>
-		<title>My Personal Portfolio: eMail Me</title>
+		<title>Micheal Walls' Portfolio: eMail Me</title>
 		<meta charset="UTF-8">
 		<meta name="generator" content="Geany 0.20">
 		<link rel="stylesheet" href="css/wide.css" media="screen and (min-width: 674px)">

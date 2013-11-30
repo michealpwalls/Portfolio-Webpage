@@ -1,8 +1,9 @@
 <?php
 /*
- *      logout_mobile.php	-	 Portfolio-Webpage
+ *      logout_mobile.php	-	 portfolio
  *
- *		Login section of the Portfolio
+ *		logout component for the Login section of the (mobile) Portfolio
+ * 		Destroys the user's Session to securely log them out.	
  *      
  *      Copyright 2013 Micheal Walls <michealpwalls@gmail.com>
  *      

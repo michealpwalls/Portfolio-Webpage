@@ -2,7 +2,7 @@
 
 <?php
  	/*
-	 * dbconnect.php	-	 Portfolio-Webpage
+	 * dbconnect.php	-	 portfolio
 	 *
 	 * A component of the Login section. Connects to a MySQL database
 	 * using the PHP Data Objects class.

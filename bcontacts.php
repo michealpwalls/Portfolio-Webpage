@@ -2,7 +2,7 @@
 
 <?php
  	/*
-	 * bcontacts.php	-	 Portfolio-Webpage
+	 * bcontacts.php	-	 portfolio
 	 *
 	 * Business Contacts section of the Portfolio
 	 * 
@@ -29,7 +29,7 @@
 
 <html lang="en">
 	<head>
-		<title>My Personal Portfolio: Business Contacts</title>
+		<title>Micheal Walls' Portfolio: Business Contacts</title>
 		<meta charset="UTF-8">
 		<meta name="generator" content="Geany 1.23.1">
 		<link rel="stylesheet" href="css/wide.css" media="screen and (min-width: 674px)">
